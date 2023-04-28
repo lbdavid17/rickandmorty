@@ -1,0 +1,17 @@
+{
+    "nombre":"Juan",
+    "edad":33,
+    "casado":false,
+    "altura":1.8,
+    "direccion": {
+        "calle":"Travesía de Vigo",
+        "pais":"España",
+        "numero":205,
+        "cp":36207
+    },
+    "notafinal":null,
+    "calificaciones":[6,8],
+    "caracteristicas":["risueño","inteligente",10,true]
+
+
+}
