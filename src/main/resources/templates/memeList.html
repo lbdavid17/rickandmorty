@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1"> 
+    <title>Document</title>
+    <style>
+        img{
+            width:100px;
+            border-radius: 10px;
+        }
+        li{
+            list-style: none;
+            
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+        }
+        nav a:hover{
+            color:aquamarine;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/memes">lista de memes</a>
+        <a href="/memes/addForm">añadir nuevo meme</a>
+
+    </nav>
+    
+    <h1>Lista de todos los memes</h1>
+    <section class="container">
+    <ul>
+        <li th:each="meme: ${misMemes}">
+            <img th:src="${meme.url}" alt="meme"/>
+            <p th:text="${meme.description}"></p>
+            <button th:onclick="deleteMeme( [[${meme.id}]] )">❌</button>
+            <!-- hay muchas otras formas  -->
+        </li>
+    </ul>
+    </section>
+</body>
+</html>
+
+
+ 
+
+<script>
+    async function deleteMeme(id){
+       /*console.log("quieres borrar el meme con id=",id)*/
+        await fetch('/memes/'+id,{method:'DELETE'})
+        console.log("Meme borrado correctamente")
+        window.location.replace('/memes')
+    }
+</script>   
+

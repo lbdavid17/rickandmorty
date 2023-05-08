@@ -17,15 +17,19 @@ public class MemeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (unique =true,nullable=false)
-    long id;
-    String category;
-    String description;
-    String url;
+    public long id;
+    public String category;
+    public String description;
+    //@Column(length=500)
+    public String url;
     //debería ser Autor autor ya que estos tienen info
-    String author;
+    public String author;
     @Temporal(TemporalType.TIMESTAMP)
     @Column (columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     Date createdAt;
+
+    
+
 }
 
 
