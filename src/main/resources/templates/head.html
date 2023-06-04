@@ -1,0 +1,39 @@
+<head th:fragment="head(titulo)">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+    <style>
+        img{
+            width:100px;
+            border-radius: 10px;
+        }
+        li{
+            list-style: none;
+            
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+        }
+        nav a:hover{
+            color:aquamarine;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px ;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>

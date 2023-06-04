@@ -1,46 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="1"> 
-    <title>Document</title>
-    <style>
-        img{
-            width:100px;
-            border-radius: 10px;
-        }
-        li{
-            list-style: none;
-            
-        }
-        nav{
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-        nav a:hover{
-            color:aquamarine;
-        }
-        .container{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px ;
-        }
-    </style>
-</head>
+<div th:replace="head(titulo='listado')"></div>
 <body>
-    <nav>
-        <a href="/memes">lista de memes</a>
-        <a href="/memes/addForm">añadir nuevo meme</a>
-
-    </nav>
+    
+    <!-- el insert lo incrusta dentro del elemento indicado (div en este caso). El replace lo añade solo-->
+    <div th:insert="~{navegacion(url1='/memes',url2='/memes/addForm')}"></div>
+    <!-- <div th:replace="navegacionMemes"></div> -->
     
     <h1>Lista de todos los memes</h1>
     <section class="container">

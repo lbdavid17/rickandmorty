@@ -1,50 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        img{
-            width:100px;
-            border-radius: 10px;
-        }
-        li{
-            list-style: none;
-            
-        }
-        nav{
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-        nav a:hover{
-            color:aquamarine;
-        }
-        .container{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px ;
-        }
-        .form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
-</head>
+<div th:replace="head(titulo='creacion')"></div>
 <body>
-    <nav>
-        <a href="/memes">lista de memes</a>
-        <a href="/memes/addForm">añadir nuevo meme</a>
-
-    </nav>
+    <div th:insert="~{navegacion(url1='/memes',url2='/memes/addForm')}"></div>
 
     <h1>Creación de un nuevo meme</h1>
     <form class="form" action="/memes" method="post">
@@ -52,7 +10,7 @@
         <input id="description"  name="description">
         <label for="url">url</label>
         <input id="url"  name="url">
-        <label for="category">url</label>
+        <label for="category">category</label>
         <select id="category"  name="category">
             <option value="informatica">INFORMATICA</option>
             <option value="humorNegro">HUMOR NEGRO</option>
